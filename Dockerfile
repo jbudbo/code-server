@@ -21,9 +21,8 @@ RUN yarn \
 	&& rm -r /src/build/vscode-* \
 	&& rm -r /src/build/code-server*-linux-*
 
-# We deploy with ubuntu so that devs have a familiar environment.
-#FROM ubuntu:18.04
-mcr.microsoft.com/dotnet/core/sdk:3.0
+# Looking to prep for .Net Core C# development, start from the sdk rather than Ubuntu
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0
 
 RUN apt-get update && apt-get install -y \
 	openssl \
