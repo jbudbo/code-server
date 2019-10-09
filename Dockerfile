@@ -22,7 +22,8 @@ RUN yarn \
 	&& rm -r /src/build/code-server*-linux-*
 
 # We deploy with ubuntu so that devs have a familiar environment.
-FROM ubuntu:18.04
+#FROM ubuntu:18.04
+mcr.microsoft.com/dotnet/core/sdk:3.0
 
 RUN apt-get update && apt-get install -y \
 	openssl \
